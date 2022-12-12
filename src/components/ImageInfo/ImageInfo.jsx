@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ImageGallery from '../ImageGallery/ImageGallery';
+import ImageGallery from 'components/ImageGallery/ImageGallery';
 import Loader from 'components/Loader/Loader';
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -20,6 +20,7 @@ class ImageInfo extends Component {
     totalHits: null,
     hits: [],
   };
+
   static propTypes = {
     onClick: PropTypes.func.isRequired,
     searchQuery: PropTypes.string.isRequired,
