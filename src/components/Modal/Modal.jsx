@@ -13,11 +13,15 @@ class Modal extends Component {
     onClose: PropTypes.func.isRequired,
     children: PropTypes.node,
   };
-  // Вешаем слушателя на window
+
+  // Додавання слухача на window
+
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
   }
-  // Для снятия слушателя с window
+
+  // Усунення слухача з window
+
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown);
   }

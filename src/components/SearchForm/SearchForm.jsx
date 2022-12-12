@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import s from './SearchForm.module.css';
+
 import PropTypes from 'prop-types';
+import { IconContext } from 'react-icons';
+import { FiSearch } from 'react-icons/fi';
 
 class SearchForm extends Component {
   state = { value: '' };
@@ -9,13 +12,15 @@ class SearchForm extends Component {
     onSubmit: PropTypes.func.isRequired,
   };
 
-  // Записывает в состояние class SearchForm текст введенный в инпут
+  // Запис тексту, введеного в інпут, в стан class SearchForm
+
   handleChange = e => {
     const { value } = e.currentTarget;
     this.setState({ value: value });
   };
 
-  // Записывает в пропс onSubmit текущее состояние
+  // Запис поточного стану в пропс onSubmit
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
@@ -26,10 +31,16 @@ class SearchForm extends Component {
       <form className={s.searchForm} onSubmit={this.handleSubmit}>
         <button
           onSubmit={this.handleSubmit}
-          type="button"
+          type="submit"
           className={s.searchForm__button}
         >
-          <span className={s.ComponentsearchForm__button__labe}>Search</span>
+          <IconContext.Provider value={{ size: '1.5em' }}>
+            <div>
+              <FiSearch />
+            </div>
+          </IconContext.Provider>
+
+          <span className={s.ComponentsearchForm__button__labe}></span>
         </button>
         <input
           type="text"

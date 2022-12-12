@@ -28,7 +28,8 @@ class ImageInfo extends Component {
     moreButtonHide: PropTypes.func.isRequired,
   };
 
-  // Асинхронная функция, которая сначала сравнивает предыдущий и следующий пропсы и если они отличаются, делает запрос на АРI
+  // Асинхронна функція призначенна для порівняння попереднього і наступного пропсів з подальшим запитом API
+
   async componentDidUpdate(prevProps, prevState) {
     const prevSearchQuery = prevProps.searchQuery;
     const nextSearchQuery = this.props.searchQuery;

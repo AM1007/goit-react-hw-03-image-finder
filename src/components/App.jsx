@@ -4,8 +4,6 @@ import Searchbar from 'components/Searchbar/Searchbar';
 import ImageInfo from 'components/ImageInfo/ImageInfo';
 import Button from 'components/Button/Button';
 
-// import s from './App.module.css';
-
 class App extends Component {
   state = {
     showModal: false,
@@ -16,7 +14,8 @@ class App extends Component {
     moreVisible: false,
   };
 
-  // Функция для смены состояния модального окна с видимого на невидимое и получения данных для показа в модалке
+  // Перемикання відображення модального вікна та отримання даних
+
   toggleModal = e => {
     this.setState(({ showModal }) => ({ showModal: !showModal }));
 
@@ -25,16 +24,19 @@ class App extends Component {
     }
   };
 
-  //Функция для получения из формы текста введенного пользователем в инпут
+  // Отримання користувальницького тексту з інпуту форми
+
   submitForm = e => {
     this.setState({ page: 1 });
     this.setState({ searchQuery: e.value });
   };
 
-  // Функция для показа или скрытия кнопки "Загрузить еще"
+  // Перемикання відображення кнопки "Load More"
+
   moreButtonRender = () => {
     this.setState({ moreVisible: true });
   };
+
   moreButtonHide = () => {
     this.setState({ moreVisible: false });
   };
@@ -47,6 +49,7 @@ class App extends Component {
 
   render() {
     const { showModal, moreVisible, searchQuery, page, src, alt } = this.state;
+
     return (
       <>
         <Searchbar onSubmit={this.submitForm} />
@@ -68,4 +71,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
