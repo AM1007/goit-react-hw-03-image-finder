@@ -3,6 +3,7 @@ import SearchForm from 'components/SearchForm/SearchForm';
 import s from './Searchbar.module.css';
 import PropTypes from 'prop-types';
 
+// Для переброса двух пропсов из App в компонент SearchForm
 const Searchbar = ({ onSubmit }) => {
   return (
     <header className={s.searchbar}>
@@ -10,7 +11,6 @@ const Searchbar = ({ onSubmit }) => {
     </header>
   );
 };
-
 Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };

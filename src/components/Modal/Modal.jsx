@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 
-import s from './Modal.modal.css';
+import s from './Modal.module.css';
 import PropTypes from 'prop-types';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -10,14 +10,14 @@ class Modal extends Component {
   state = {};
 
   static propTypes = {
-    onClose: PropTypes.PropTypes.funct.isRequired,
+    onClose: PropTypes.func.isRequired,
     children: PropTypes.node,
   };
-
+  // Вешаем слушателя на window
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
   }
-
+  // Для снятия слушателя с window
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown);
   }

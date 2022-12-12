@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Modal from 'components/Modal/Modal';
-import Searchbar from 'components/ImageInfo/ImageInfo';
+import Searchbar from 'components/Searchbar/Searchbar';
 import ImageInfo from 'components/ImageInfo/ImageInfo';
 import Button from 'components/Button/Button';
+
+// import s from './App.module.css';
 
 class App extends Component {
   state = {
@@ -14,6 +16,7 @@ class App extends Component {
     moreVisible: false,
   };
 
+  // Функция для смены состояния модального окна с видимого на невидимое и получения данных для показа в модалке
   toggleModal = e => {
     this.setState(({ showModal }) => ({ showModal: !showModal }));
 
@@ -22,20 +25,21 @@ class App extends Component {
     }
   };
 
+  //Функция для получения из формы текста введенного пользователем в инпут
   submitForm = e => {
     this.setState({ page: 1 });
     this.setState({ searchQuery: e.value });
   };
 
+  // Функция для показа или скрытия кнопки "Загрузить еще"
   moreButtonRender = () => {
     this.setState({ moreVisible: true });
   };
-
   moreButtonHide = () => {
     this.setState({ moreVisible: false });
   };
 
-  clickMoreButton = () => {
+  clickMoreButton = e => {
     this.setState(prevState => {
       return { page: prevState.page + 1 };
     });
