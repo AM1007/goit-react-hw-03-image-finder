@@ -16,6 +16,7 @@ const ImageGalleryItem = props => {
     </li>
   );
 };
+
 ImageGalleryItem.propTypes = {
   hit: PropTypes.shape().isRequired,
   onClick: PropTypes.func.isRequired,

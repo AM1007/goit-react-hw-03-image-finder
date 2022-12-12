@@ -87,9 +87,11 @@ class ImageInfo extends Component {
 
   render() {
     const { hits, status } = this.state;
+
     if (status === 'idle') {
       return <div> </div>;
     }
+
     if (status === 'pending') {
       return (
         <>
@@ -98,9 +100,11 @@ class ImageInfo extends Component {
         </>
       );
     }
+
     if (status === 'rejected') {
       return <div></div>;
     }
+
     if (status === 'resolved') {
       return (
         <>
