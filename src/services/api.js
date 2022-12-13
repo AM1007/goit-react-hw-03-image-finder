@@ -13,10 +13,10 @@ axios.defaults.params = {
   safe_search: true,
 };
 
-export const getImages = async (searchQuery, page) => {
+export const getImages = async (query, page) => {
   const config = {
     params: {
-      q: searchQuery,
+      q: query,
       page: page,
     },
   };
